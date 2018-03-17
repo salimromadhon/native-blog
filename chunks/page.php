@@ -20,9 +20,8 @@
 	}
 	else
 	{
-		header('HTTP/1.0 404 Not Found');
-		$page_title = 'Not Found';
-		$content = '<h1>Not Found</h1><hr><p>The page you are requested is not found.</p>';
+		$page_title = 'Parsing Error';
+		$content = '<h1>Parsing Error</h1><hr><p>The page you are requested can not be displayed due to parsing error.</p>';
 	}
 
 	include 'header.php';

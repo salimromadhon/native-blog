@@ -26,18 +26,24 @@
 		// Show homepage
 		header('location: home');
 	}
-	elseif (is_dir($content_path))
+	elseif (file_exists($content_path.'.page.md'))
 	{
-		// Show log index (logs)
-		include 'chunks/log_index.php';
+		// Show page content
+		include 'chunks/page.php';
 	}
 	elseif (file_exists($content_path.'.log.md'))
 	{
 		// Show log content
 		include 'chunks/log_page.php';
 	}
+	elseif (is_dir($content_path))
+	{
+		// Show log index (logs)
+		include 'chunks/log_index.php';
+	}
 	else
 	{
-		// Show page content
-		include 'chunks/page.php';
+		// Show error content
+		header('HTTP/1.0 404 Not Found');
+		include 'chunks/error.php';
 	}
