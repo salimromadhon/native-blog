@@ -11,7 +11,7 @@
 	 * -------------------
 	 */
 	$config = array(
-		'base_url'		=> 'http://localhost/nativeblog', // Without trailing slash (/)
+		'base_url'		=> 'http://localhost/native-blog', // Without trailing slash (/)
 		'site_title'	=> 'Salim Romadhon',
 		'safe_text'		=> TRUE // Safe mode for Parsedown
 	);
