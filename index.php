@@ -31,7 +31,7 @@
 		// Show log index (logs)
 		include 'chunks/log_index.php';
 	}
-	elseif (file_exists($content_path.'.log.txt'))
+	elseif (file_exists($content_path.'.log.md'))
 	{
 		// Show log content
 		include 'chunks/log_page.php';

@@ -3,7 +3,7 @@
 	function page()
 	{
 		$path	= path(1);
-		$page	= './contents/'.$path[0].'.page.txt';
+		$page	= './contents/'.$path[0].'.page.md';
 
 		if ( ! file_exists($page))
 			return FALSE;

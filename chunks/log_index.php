@@ -5,13 +5,13 @@
 	$Parsedown->setSafeMode($config['safe_text']);
 
 	$logs_path	= implode('/', $path);
-	$logs		= glob('./contents/'.$logs_path.'/*.log.txt');
+	$logs		= glob('./contents/'.$logs_path.'/*.log.md');
 
 	$output = array();
 
 	for ($i = 0; $i < count($logs); $i++)
 	{
-		$slug		= basename($logs[$i], '.log.txt'); // return filename
+		$slug		= basename($logs[$i], '.log.md'); // return filename
 		$logs[$i]	= file_get_contents($logs[$i]);
 		$logs[$i]	= explode('----', $logs[$i], 5);
 

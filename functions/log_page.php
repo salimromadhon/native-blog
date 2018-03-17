@@ -3,7 +3,7 @@
 	function log_page()
 	{
 		$path	= path();
-		$log	= './contents/'.implode('/', $path).'.log.txt';
+		$log	= './contents/'.implode('/', $path).'.log.md';
 
 		if ( ! file_exists($log))
 			return FALSE;
