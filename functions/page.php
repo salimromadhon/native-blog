@@ -2,8 +2,8 @@
 
 	function page()
 	{
-		$path	= path(1);
-		$page	= './contents/'.$path[0].'.page.md';
+		$path	= path();
+		$page	= './contents/'.implode('/', $path).'.page.md';
 
 		if ( ! file_exists($page))
 			return FALSE;
