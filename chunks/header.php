@@ -26,14 +26,23 @@
 <body style="margin:3em auto; max-width:600px; padding:0 2em">
 <?php
 	
-	$url	= $config['base_url'];
+	$url = $config['base_url'];
 
-	$nav	= array();
+	$nav = path();
 
-	for($i = 0; $i < count($path); $i++)
+	if ($nav == NULL)
 	{
-		$url		.= '/'.$path[$i];
-		$nav[$i]	 = '<a href="'.$url.'">'.$path[$i].'</a>';
+		$nav = '';
+	}
+	else
+	{
+		for($i = 0; $i < count($nav); $i++)
+		{
+			$url		.= '/'.$nav[$i];
+			$nav[$i]	 = '<a href="'.$url.'">'.$nav[$i].'</a>';
+		}
+
+		$nav = '/'.implode('/', $nav);
 	}
 
-	echo '<div class="site-header"><div class="site-title"><strong>'.strtoupper($config['site_title']).'</strong></div><div class="site-nav"><code><a href="'.$config['base_url'].'">&bull;&bull;&bull;</a>/'.implode('/', $nav).'</code></div></div>';
+	echo '<div class="site-header"><div class="site-title"><strong>'.strtoupper($config['site_title']).'</strong></div><div class="site-nav"><code><a href="'.$config['base_url'].'">&bull;&bull;&bull;</a>'.$nav.'</code></div></div>';

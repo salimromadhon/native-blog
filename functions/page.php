@@ -1,8 +1,10 @@
 <?php
 
-	function page()
+	function page($path = NULL)
 	{
-		$path	= path();
+		if ($path == NULL)
+			return FALSE;
+
 		$page	= './contents/'.implode('/', $path).'.page.md';
 
 		if ( ! file_exists($page))

@@ -2,7 +2,7 @@
 
 	require './functions/page.php';
 
-	$page = page();
+	$page = page($path);
 	
 	if ($page !== FALSE)
 	{

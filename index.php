@@ -23,8 +23,9 @@
 
 	if ($path == NULL)
 	{
-		// Show homepage
-		header('location: home');
+		// Show home page
+		$path = array('home');
+		include 'chunks/page.php';
 	}
 	elseif (file_exists($content_path.'.page.md'))
 	{
@@ -43,7 +44,8 @@
 	}
 	else
 	{
-		// Show error content
+		// Show error page
 		header('HTTP/1.0 404 Not Found');
-		include 'chunks/error.php';
+		$path = array('error');
+		include 'chunks/page.php';
 	}

@@ -1,8 +1,10 @@
 <?php
 
-	function log_page()
+	function log_page($path = NULL)
 	{
-		$path	= path();
+		if ($path == NULL)
+			return FALSE;
+
 		$log	= './contents/'.implode('/', $path).'.log.md';
 
 		if ( ! file_exists($log))

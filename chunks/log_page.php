@@ -2,7 +2,7 @@
 
 	require './functions/log_page.php';
 
-	$log = log_page();
+	$log = log_page($path);
 	
 	if ($log !== FALSE)
 	{
