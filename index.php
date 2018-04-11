@@ -11,9 +11,11 @@
 	 * -------------------
 	 */
 	$config = array(
-		'base_url'		=> 'http://localhost/native-blog', // Without trailing slash (/)
+		'base_url'	=> 'https://archive.salim.puruhita.com', // Without trailing slash (/)
 		'site_title'	=> 'Salim Romadhon',
-		'safe_text'		=> TRUE // Safe mode for Parsedown
+		'home_page'	=> 'home', // Your home page, well-formatted page file (.page.md) (example: `foo`, `foo/bar/baz`)
+		'error_page'	=> 'error', // It is like `home_page`, but for your error page
+		'safe_text'	=> TRUE // Safe mode for Parsedown
 	);
 
 	$path = path();
@@ -24,7 +26,7 @@
 	if ($path == NULL)
 	{
 		// Show home page
-		$path = array('home');
+		$path = explode('/', $config['home_page']);
 		include 'chunks/page.php';
 	}
 	elseif (file_exists($content_path.'.page.md'))
@@ -46,6 +48,6 @@
 	{
 		// Show error page
 		header('HTTP/1.0 404 Not Found');
-		$path = array('error');
+		$path = explode('/', $config['error_page']);
 		include 'chunks/page.php';
 	}

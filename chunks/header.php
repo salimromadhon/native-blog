@@ -26,16 +26,18 @@
 <body style="margin:3em auto; max-width:600px; padding:0 2em">
 <?php
 	
-	$url = $config['base_url'];
+	$nav = $path;
+	
+	$url = implode('/', $nav);
 
-	$nav = path();
-
-	if ($nav == NULL)
+	if ($nav == NULL OR ($url == $config['home_page']) OR ($url == $config['error_page']))
 	{
 		$nav = '';
 	}
 	else
 	{
+		$url = $config['base_url'];
+	
 		for($i = 0; $i < count($nav); $i++)
 		{
 			$url		.= '/'.$nav[$i];
