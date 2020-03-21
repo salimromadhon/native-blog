@@ -24,7 +24,7 @@
 		}
 
 		// Assign visible `$article` into `$output` based on time
-		if (($logs[$i][1] == 1) AND ( ! $error))
+		if (( ! $error) AND ($logs[$i][1] == 1))
 		{
 			$logs[$i][2] = strtotime(trim($logs[$i][2]));
 			$output[$logs[$i][2]] = array(
